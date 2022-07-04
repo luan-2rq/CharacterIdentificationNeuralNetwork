@@ -5,7 +5,7 @@ def sigmoid_func(x) -> float:
     return result
 
 def sigmoid_derivative_func(x) -> float:
-    df = sigmoid_func(x)[1-sigmoid_func(x)]
+    df = sigmoid_func(x)*(1-sigmoid_func(x))
     return df
 
 #binary step function
