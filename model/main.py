@@ -1,6 +1,6 @@
 from MLP import *
 import pandas as pd
-from training_data import TrainingDataTuple
+from training_data import TrainingTuple
 from utils import *
 
 def main():
@@ -26,12 +26,15 @@ def main():
     #Taxa de aprendizado deve ser entre ]0, 1] (nao pode ser inicializado com 0)
     learning_rate = 0.3
 
-    mlp_limpo = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate, sigmoid_func, sigmoid_derivative_func)
-
+    mlp_limpo = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate)
+    #mlp_limpo.test_feed_forward()
     training_data = []
     for i in range(len(data)):
-        training_data.append(TrainingDataTuple(data.iloc[i].values, labels.iloc[i].values))
+        training_data.append(TrainingTuple(data.iloc[i].values, labels.iloc[i].values))
     mlp_limpo.train(training_data)
+    
+    for i in range(len(data)):
+        mlp_limpo.predict(training_data[i])
 
 
     # # print("\n---------------- Resultados ----------------")
