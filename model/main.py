@@ -6,13 +6,11 @@ from utils import *
 def main():
     
     #Leitura do arquivo do conjunto de dados
-    df_limpo = pd.read_csv('..\data\problemAND.csv', delimiter=',', encoding='UTF-8', header = None)
-    labels = df_limpo.loc[:,2:2:]
-    data = df_limpo.loc[:,0:1:]
-    print(data)
-    print(labels)
+    df_limpo = np.genfromtxt('..\data\problemAND.csv', delimiter=",", encoding='UTF-8-sig')
     #df_ruido = pd.read_csv(data/caracteres-ruido.csv', delimiter=',', encoding='UTF-8')
     #df_ruido_20 = pd.read_csv(data/caracteres-ruido-20.csv', delimiter=',', encoding='UTF-8')
+    data = df_limpo[:,0:2]
+    labels = df_limpo[:,2:3]
 
     #Cada caractere tera 63 pixeis que os representam, portanto terao 63 neuronios de entrada
     n_neurons_input = 2
@@ -27,13 +25,13 @@ def main():
     learning_rate = 0.3
 
     mlp_limpo = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate)
-    #mlp_limpo.test_feed_forward()
+    # mlp_limpo.test_feed_forward()
     training_data = []
     for i in range(len(data)):
-        training_data.append(TrainingTuple(data.iloc[i].values, labels.iloc[i].values))
-    mlp_limpo.train(training_data)
+        training_data.append(TrainingTuple(data[i], labels[i]))
+    mlp_limpo.train(training_data, 2500)
     
-    for i in range(len(data)):
+    for i in range(len(training_data)):
         mlp_limpo.predict(training_data[i])
 
 
