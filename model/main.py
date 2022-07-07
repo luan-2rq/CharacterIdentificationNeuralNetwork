@@ -6,20 +6,22 @@ from utils import *
 def main():
     
     #Leitura do arquivo do conjunto de dados
-    df_limpo = np.genfromtxt('..\data\problemAND.csv', delimiter=",", encoding='UTF-8-sig')
+    df_limpo = np.genfromtxt('..\data\caracteres-limpo.csv', delimiter=",", encoding='UTF-8-sig')
     #df_ruido = pd.read_csv(data/caracteres-ruido.csv', delimiter=',', encoding='UTF-8')
     #df_ruido_20 = pd.read_csv(data/caracteres-ruido-20.csv', delimiter=',', encoding='UTF-8')
-    data = df_limpo[:,0:2]
-    labels = df_limpo[:,2:3]
+    # data = df_limpo[:,0:2]
+    # labels = df_limpo[:,2:3]
+    data = df_limpo[:,0:63]
+    labels = df_limpo[:,63:70]
 
     #Cada caractere tera 63 pixeis que os representam, portanto terao 63 neuronios de entrada
-    n_neurons_input = 2
+    n_neurons_input = 63
     
     #Este parametro deve ser definido para o nosso problema atraves de experimentacao
-    n_hidden_layers_neurons = [2] #1 camada com 15 neuronios
+    n_hidden_layers_neurons = [10] #1 camada com 15 neuronios
     
     #Serao 7 classes diferentes de caracteres, portanto serao 7 neuronios de saida
-    n_neurons_output = 1
+    n_neurons_output = 7
 
     #Taxa de aprendizado deve ser entre ]0, 1] (nao pode ser inicializado com 0)
     learning_rate = 0.3
@@ -29,7 +31,7 @@ def main():
     training_data = []
     for i in range(len(data)):
         training_data.append(TrainingTuple(data[i], labels[i]))
-    mlp_limpo.train(training_data, 2500)
+    mlp_limpo.train(training_data, 1500)
     
     for i in range(len(training_data)):
         mlp_limpo.predict(training_data[i])

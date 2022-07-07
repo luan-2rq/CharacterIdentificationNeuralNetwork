@@ -65,17 +65,10 @@ class MLP(object):
             for j in range(self.n_neurons[i+1]):
                 layer = i + 1
                 neuron_index = j
-                # print(f"Induced Fields antes l{layer}: {self.induced_fields[layer]}")
                 self.induced_fields[layer][neuron_index] = self.induced_field(self.activations[i], layer, neuron_index)
                 self.activations[layer][neuron_index] = self.activation_func(self.induced_fields[layer][neuron_index])
-                # print(f"Induced Fields depois l{layer}: {self.induced_fields[layer]}")
-                # print(f"Activations depois l{layer}: {self.activations[layer]}")
-                # print(f'Induced field: layer{layer} neuron{neuron_index} - {self.induced_fields[layer][neuron_index]}')
-                # print(f'Activation: layer{layer} neuron{neuron_index} - {self.activations[layer][neuron_index]}')
-            print(f"Local induced field l{i+1}: {self.induced_fields[i+1]}")
+
         output = bipolar(0, self.induced_fields[len(self.induced_fields)-1])
-        # print(self.induced_fields)
-        # print(output)
         self.activations[len(self.activations)-1] = output
         return output
         
@@ -94,11 +87,7 @@ class MLP(object):
             current_weigths = self.weights[layer-1]
             #     ## Caso o calculo ja esteja nos pesos que se conectam diretamente ao neuronio que se quer calcular o CI, nao eh necessario multiplicar os pesos para todos os neuronios da proxima camada, somente para o neuronio do campo local induzido
             for j in range(len(current_weigths[neuron_index])):
-                # if neuron_index == 0 and layer == 2:
-                #     print(f"The input is {input[j]} and weight {current_weigths[neuron_index][j]}")
                 local_induced_field = local_induced_field + (current_weigths[neuron_index][j] * input[j])
-                if 1 == layer:
-                    print(f"Partial induced field: {(current_weigths[neuron_index][j] * input[j])}")
         return local_induced_field
 
     def weight_change(self, neuron_layer, local_gradient, weight_i_index):
@@ -110,6 +99,8 @@ class MLP(object):
             neuron_index = 0
             if self.bias:
                 neuron_index = weight_i_index - 1
+            else:
+                neuron_index = weight_i_index
             weight_change = self.learning_rate * local_gradient * self.activations[neuron_layer-1][neuron_index]
         return weight_change
 
@@ -119,34 +110,24 @@ class MLP(object):
                 local_gradient = self.local_gradient(i, j, expected_output) # local gradient do neuronio atual
                 for k in range(self.n_neurons[i-1]+1 if self.bias else self.n_neurons[i-1]): # k - index da camada anterior 
                     if i > 0: # i > 0, pois delta_weights < n_layers
-                        # print(f"Local gradient l{i}:{j} - {local_gradient}")
                         self.delta_weights[i-1][j][k] = self.weight_change(i, local_gradient, k)
-                        #print(self.delta_weights[i-1][j][k])
-            print(f"Ativacoes l{i}: {self.activations[i]}")
-            if i != 0:
-                print(f"Local gradients l{i}: {self.local_gradients[i]}")
 
     def local_gradient(self, layer, neuron_index, expected_output):
         local_gradient = 0
-        # print(f"layer ind_fields lenth {len(self.induced_fields[layer])}")
-        # print(f"neuron index {neuron_index}")
 
         derivative = self.activation_func_derivative(self.activations[layer][neuron_index])
         #Caso o neuronio seja da camada de saida
-        #Este if esta calculando corretamente o gradiente local
         if layer == len(self.n_neurons)-1:
             error = expected_output[neuron_index] - self.activations[layer][neuron_index]
             local_gradient = error * derivative
             self.local_gradients[layer][neuron_index] = local_gradient
         #Caso o neuronio seja da camada escondida
-        #O gradiente local nao esta correto nesse else
         else:
             weights = self.weights[layer]
             for j in range(self.n_neurons[layer+1]):
                 local_gradient += self.local_gradients[layer+1][j] * weights[j][neuron_index+1 if self.bias else neuron_index]
             local_gradient = local_gradient * derivative
             self.local_gradients[layer][neuron_index] = local_gradient
-        #print(f"Local gradient l{layer}:{neuron_index} - {local_gradient}")
         
         return local_gradient
 
@@ -173,23 +154,12 @@ class MLP(object):
                 #pegar entrada
                 input = train_data.data
                 expected_output = train_data.label
-                # print("-------------------")
-                # print(f'label {expected_output}')
+
                 output = self.feed_forward(input)
-                print(f"Entrada: {input}")
-                print(f"Saida: {output}")
-                print(f'Expected: {expected_output}\n')
-                # print("\n")
-                # self.print_weights()
-                # print("\n")
-                # print("-------------------")
 
             #step 6 e 7 
                 #backpropagation
                 self.back_propagate(expected_output)
-                self.print_weights()
-                self.print_delta_weights()
-                #self.print_delta_weights()
             #step 8
                 #atualizaçao de pesos
                 for i in range(len(self.weights)):  
@@ -265,7 +235,7 @@ class MLP(object):
     def predict(self, data_tuple):
         output = self.feed_forward(data_tuple.data)
         print(f"Saida: {output}\n")
-        self.print_answer(output)
+        print(self.answer(output))
 
     def test_feed_forward(self):
         self.init_weights()
@@ -313,21 +283,20 @@ class MLP(object):
         # print('Expected 1.12')
         # print(output)
 
-    def print_answer(self, output):
-       # imprime o output das respostas
-        if output[0] == 1:
-            print("True")
-        else:
-            print("False")
-        # print('Resposta: \n')
+    def answer(self, output):
         # answer = ""
-        # letters = ['A', 'B', 'C', 'D', 'E', 'J', 'K']
-        # for i in range(len(letters)):
-        #     if output[i] == 1:
-        #         answer += letters[i]
-        #     else:
-        #         answer += '.'
-        # return answer
+        # if output[0] == 1:
+        #     answer = "True"
+        # else:
+        #     answer = "False"
+        answer = ""
+        letters = ['A', 'B', 'C', 'D', 'E', 'J', 'K']
+        for i in range(len(letters)):
+            if output[i] == 1:
+                answer += letters[i]
+            else:
+                answer += '.'
+        return answer
         # Exemplos:
         #     A: 1000000
         #     B: 0100000
