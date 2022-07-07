@@ -2,6 +2,7 @@ import random
 import logging
 
 from pyrsistent import l
+from sklearn import datasets
 from utils import *
 import numpy as np
 import pandas as pd
@@ -26,7 +27,7 @@ class MLP(object):
         self.induced_fields = [] #induced fields
         self.local_gradients = [] #local gradients
         self.n_neurons = [] # lista contendo o numero de neuronios de cada camada
-        self.epocas = 0
+        self.epochs = 0
 
         self.n_neurons.append(self.n_input_neurons)
         self.n_neurons.extend(self.n_hidden_layers_neurons)
@@ -36,17 +37,17 @@ class MLP(object):
         self.activation_func_derivative = activation_func_derivative
 
         for i in range(len(self.n_neurons)):
-            self.activations.append([float('-inf') for _ in range(self.n_neurons[i])])
-            self.induced_fields.append([float('-inf') for _ in range(self.n_neurons[i])])
-            self.local_gradients.append([float('-inf') for _ in range(self.n_neurons[i])])
+            self.activations.append([0 for _ in range(self.n_neurons[i])])
+            self.induced_fields.append([0 for _ in range(self.n_neurons[i])])
+            self.local_gradients.append([0 for _ in range(self.n_neurons[i])])
         
     # Inicialização dos pesos com valores entre [0, 1]
     def init_weights(self):
         # Inicializando os pesos com valores entre 0 e 1(binario, nao bipolar)
         # Entre cada layer existe uma matriz de pesos com index que vao de um neuronio a outro j -> i
-        # self.weights.append([[0.5, 0.5],
-        #         [0.5, 0.5]])
-        # self.weights.append([[0.5, 0.5]])
+        # self.weights.append([[0.1, 0.3],
+        #                     [0.2, 0.3]])
+        # self.weights.append([[0.2, 0.4]])
         for i in range(len(self.n_neurons)-1):
             n_cols = self.n_neurons[i] + 1 if self.bias else self.n_neurons[i] # +1 por conta do neuronio de bias
             n_rows = self.n_neurons[i+1]
@@ -131,53 +132,95 @@ class MLP(object):
         
         return local_gradient
 
-    def train(self, training_data, maxEpocs):
-        #Step 0
-        self.init_weights()
-        ## Save Initial Weigths ## 
+    def train(self, training_dataset, test_dataset, max_epoch, min_accuracy):
+        #Validation variables
+        accuracy = 0
 
+        sum_training_instant_errors = 0
+        mean_sqrt_error_training = 0
+
+        sum_test_instant_errors = 0
+        previous_mean_sqrt_error_test = 0
+        current_mean_sqrt_error_test = 1
+
+        sum_mean_sqrt_errors_test = 0
+
+        #step 0
+        self.init_weights()
+
+        ## Save Initial Weigths ## 
+        self.save_initial_weights()
         ##########################
 
-        stop_condition = False
+        ## Preparing data
+        training_data = training_dataset[:,:-self.n_neurons[-1]]
+        training_labels = training_dataset[:, self.n_neurons[0]:]
+        test_data = test_dataset[:, :-self.n_neurons[-1]]
+        test_labels = test_dataset[:, self.n_neurons[0]:]
 
+        stop_condition = False
         #step 1
         while not stop_condition:
-            # X = training_data[:, :-self.n_neurons[-1]]
-            # y = training_data[:, self.n_neurons[0]:]
-            # X_train, X_test, y_train, y_test = train_test_split(
-            #     X, y, test_size=0.33)
-
+            np.random.shuffle(training_dataset)
+            np.random.shuffle(test_dataset)
             #Executar epocas
-            for train_data in training_data:
-            #step 3, 4 e 5 
-                #feed_forward
-                #pegar entrada
-                input = train_data.data
-                expected_output = train_data.label
+            print(f"###########################Epoca: {self.epochs+1}#################################")
 
+            sum_training_instant_errors = 0
+            #step 3, 4 e 5 
+            for i, data in enumerate(training_data):
+                #feed_forward
+                input = data
+                expected_output = training_labels[i]
                 output = self.feed_forward(input)
 
             #step 6 e 7 
                 #backpropagation
                 self.back_propagate(expected_output)
             #step 8
-                #atualizaçao de pesos
+                #Weights update
                 for i in range(len(self.weights)):  
-                # iterate through columns
                     for j in range(len(self.weights[i])):
                         for k in range(len(self.weights[i][j])):
                             self.weights[i][j][k] += self.delta_weights[i][j][k] 
+                
+                sum_training_instant_errors += self.instant_error(output, expected_output)
 
-                for i in range(len(self.n_neurons)):
-                    self.activations[i] = [float('-inf') for _ in range(self.n_neurons[i])]
-                    self.induced_fields[i] = [float('-inf') for _ in range(self.n_neurons[i])]
-                    self.local_gradients[i] = [float('-inf') for _ in range(self.n_neurons[i])]
+            mean_sqrt_error_training = sum_training_instant_errors / len(training_data)
+
+            print(f"Erro Quadrado Medio Treinamento: {round(mean_sqrt_error_training, 3)}")
+
+            ######## Teste ########
+            sum_test_instant_errors = 0
+            for i, data in enumerate(test_data):
+
+                input = data
+                expected_output = test_labels[i]
+                output = self.feed_forward(input)
+
+                sum_test_instant_errors += self.instant_error(output, expected_output)
+
+            previous_mean_sqrt_error_test = current_mean_sqrt_error_test
+            current_mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
             
-            self.epocas += 1
+            print(f"Erro Quadrado Medio Teste: {round(current_mean_sqrt_error_test, 3)}\n")
 
-            #step 9
-            if self.epocas >= maxEpocs: ## substituir pela real condição para parada
+            #######################
+
+            ######### Accuracy ###########
+
+            sum_mean_sqrt_errors_test += current_mean_sqrt_error_test
+            accuracy = 1 - (sum_mean_sqrt_errors_test/(self.epochs+1))
+            print(f'Acuracia {accuracy}')
+
+            #######################
+
+            self.epochs += 1
+
+            #step 9 - Parada Antecipada
+            if self.epochs >= max_epoch or (previous_mean_sqrt_error_test < current_mean_sqrt_error_test and abs((current_mean_sqrt_error_test - mean_sqrt_error_training)) < 0.15 and accuracy >= min_accuracy): ## substituir pela real condição para parada
                 stop_condition = True
+                print("Treinamento realizado com última epoca sendo {} e acurácia {}".format(self.epochs, accuracy))
                 self.print_weights()
 
     # Soma de todos os sqrt errors da camada de saida dividido por 2
@@ -188,15 +231,32 @@ class MLP(object):
         instant_error = 0.5*sum_sqrt_error
         return instant_error
 
-    # Soma de todos os erros instantaneos dividido por n(numero de epocas)
-    # AKA funcao de custo, uma metrica para calcular o desempenho
-    def mean_sqrt_error(self, output, expected_output) -> float:
-        sum_sqrt_error = 0
-        for i in range(len(output)):
-            sum_sqrt_error += sqrt_error(expected_output[i], output[i])
-        mean_sqrt_error = 0.5*sum_sqrt_error
+    def predict(self, data_tuple):
+        output = self.feed_forward(data_tuple.data)
+        print(f"Saida: {output}\n")
+        print(self.answer(output))
 
-        return mean_sqrt_error
+
+    def save_initial_weights(self):
+        initial_weigths_path = ""
+    
+    def answer(self, output):
+        answer = ""
+        letters = ['A', 'B', 'C', 'D', 'E', 'J', 'K']
+        for i in range(len(letters)):
+            if output[i] == 1:
+                answer += letters[i]
+            else:
+                answer += '.'
+        return answer
+        # Exemplos:
+        #     A: 1000000
+        #     B: 0100000
+        #     C: 0010000
+        #     D: 0001000
+        #     E: 0000100
+        #     J: 0000010
+        #     K: 0000001
 
     def print_weights(self):
         print('#####WEIGHTS#####')
@@ -231,78 +291,3 @@ class MLP(object):
         for line in self.local_gradients:
             print (*line)
         print('\n')
-
-    def predict(self, data_tuple):
-        output = self.feed_forward(data_tuple.data)
-        print(f"Saida: {output}\n")
-        print(self.answer(output))
-
-    def test_feed_forward(self):
-        self.init_weights()
-
-        # print(f"Activation result: {self.activation_func(0.5)}")
-
-        self.weights[0][0][1] = 0.5
-        self.weights[0][1][1] = 0.5
-        self.weights[0][0][2] = 0.5
-        self.weights[0][1][2] = 0.5
-
-        #bias
-        self.weights[0][0][0] = 0.5
-        self.weights[0][1][0] = 0.5
-
-        #bias
-        self.weights[1][0][0] = 0.5
-
-        self.weights[1][0][1] = 0.5
-        self.weights[1][0][2] = 0.2
-
-        output = self.feed_forward([1, -1])
-        for i in range(1):
-            self.back_propagate([0])
-
-        #self.print_local_gradients()
-
-        self.print_delta_weights()
-
-        # for i in range(len(self.weights)):  
-        #     # iterate through columns
-        #         for j in range(len(self.weights[i])):
-        #             for k in range(len(self.weights[i][j])):
-        #                 self.weights[i][j][k] += self.delta_weights[i][j][k] 
-
-        # self.print_weights()
-
-        # output = self.feed_forward(np.array([1, -1]))
-
-        # print()
-
-        # self.print_weights()
-
-        # self.print_activations()
-        # print('Expected 1.12')
-        # print(output)
-
-    def answer(self, output):
-        # answer = ""
-        # if output[0] == 1:
-        #     answer = "True"
-        # else:
-        #     answer = "False"
-        answer = ""
-        letters = ['A', 'B', 'C', 'D', 'E', 'J', 'K']
-        for i in range(len(letters)):
-            if output[i] == 1:
-                answer += letters[i]
-            else:
-                answer += '.'
-        return answer
-        # Exemplos:
-        #     A: 1000000
-        #     B: 0100000
-        #     C: 0010000
-        #     D: 0001000
-        #     E: 0000100
-        #     J: 0000010
-        #     K: 0000001
-
