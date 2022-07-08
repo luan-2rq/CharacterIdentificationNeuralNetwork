@@ -1,12 +1,12 @@
-import math
+from math import *
 import numpy as np
 
 def sigmoid_func(x) -> float:
-    result = 1.0 / (1.0 + math.exp((-x)))
+    result = 1.0 / (1.0 + exp((-x)))
     return result
 
 def sigmoid_derivative_func(x) -> float:
-    df = math.exp(-x) / ((1.0 + math.exp(-x))**2)
+    df = exp(-x) / ((1.0 + exp(-x))**2)
     return df
 
 #binary step function
