@@ -14,7 +14,7 @@ from sklearn.model_selection import (
 
 class MLP(object):
     # n_output_neurons eh uma lista, assim eh possivel determinar o numero de neuronios em cada uma das hidden layers
-    def __init__(self, n_input_neurons = 63, n_output_neurons = 7, n_hidden_layers_neurons = [15], learning_rate = 0.2, activation_func = sigmoid_func, activation_func_derivative = sigmoid_derivative_func):
+    def __init__(self, n_input_neurons = 63, n_output_neurons = 7, n_hidden_layers_neurons = [15], learning_rate = 0.2, activation_func = sigmoid_func, activation_func_derivative = sigmoid_derivative_func, output_func = step_func):
         self.n_input_neurons = n_input_neurons
         self.n_output_neurons = n_output_neurons
         self.n_hidden_layers_neurons = n_hidden_layers_neurons
@@ -36,97 +36,70 @@ class MLP(object):
         self.activation_func_derivative = activation_func_derivative
 
         for i in range(len(self.n_neurons)):
-            self.activations.append([0 for _ in range(self.n_neurons[i])])
-            self.induced_fields.append([0 for _ in range(self.n_neurons[i])])
-            self.local_gradients.append([0 for _ in range(self.n_neurons[i])])
+            self.activations.append(np.zeros((self.n_neurons[i])))
+            self.induced_fields.append(np.zeros((self.n_neurons[i])))
+            self.local_gradients.append(np.zeros((self.n_neurons[i])))
         
-    # Inicialização dos pesos com valores entre [0, 1]
+        np.random.seed(25454)
+
+    # Inicialização dos pesos
     def init_weights(self):
-        # Inicializando os pesos com valores entre 0 e 1(binario, nao bipolar)
-        # Entre cada layer existe uma matriz de pesos com index que vao de um neuronio a outro j -> i
-        # self.weights.append([[0.2, 0.4, 0.8],
-        #                     [0.3, 0.2, 0.7]])
-        # self.weights.append([[0.7, 0.2]])
         for i in range(len(self.n_neurons)-1):
             n_cols = self.n_neurons[i] 
             n_rows = self.n_neurons[i+1]
-            weight_layer = [[random.uniform(-1, 1) for _ in range(n_cols)] for _ in range(n_rows)]
-            delta_weights_layer = [[0 for _ in range(n_cols)] for _ in range(n_rows)]
+            weight_layer = np.random.uniform(-1,1, (self.n_neurons[i], self.n_neurons[i+1]))
+            delta_weights_layer = np.random.uniform(0,0, (self.n_neurons[i], self.n_neurons[i+1]))
             self.weights.append(weight_layer)
             self.delta_weights.append(delta_weights_layer)
         self.print_weights()
         
-
     def feed_forward(self, input):
-        output = []
+        ## Camada de entrada ##
 
         self.activations[0] = input[:]
         self.induced_fields[0] = input[:]
 
-        for i in range(len(self.weights)-1):
-            for j in range(len(self.activations[i+1])):
-                layer = i + 1
-                neuron_index = j
-                self.induced_fields[layer][neuron_index] = self.induced_field(self.activations[i], layer, neuron_index)
-                self.activations[layer][neuron_index] = self.activation_func(self.induced_fields[layer][neuron_index])
-        
-        for i in range(self.n_neurons[-1]):
-            self.induced_fields[-1][i] = self.induced_field(self.activations[-2], len(self.n_neurons)-1, i)
-            output = bipolar(0, self.induced_fields[-1])
-            self.activations[-1] = output
-        return output
-        
-    # Calcula o campo induzido de um neuronio; OBS: O campo induzido nao possui activation fucntion aplicada
-    def induced_field(self, input, layer, neuron_index): 
-        local_induced_field = 0
-        
-        # layer == 0, entao o neuronio pertence a camada de entrada 
-        if layer == 0:
-            print("Nao sei se deveriamos estar calculando campo induzido para a camada de entrada")
-        else:
-            current_weigths = self.weights[layer-1]
-            # print(f"index {neuron_index}")
-            # print(f"tamanho {len(current_weigths)}")
-            for j in range(len(current_weigths[neuron_index])):
-                local_induced_field += (current_weigths[neuron_index][j] * input[j])
-        return local_induced_field
+        ## Camadas Intermediarias ##
 
-    def weight_change(self, neuron_layer, local_gradient, weight_i_index):
-        weight_change = self.learning_rate * local_gradient * self.activations[neuron_layer][weight_i_index]
-        return weight_change
+        for i, current_weigths in enumerate(self.weights[:-1]):
+            self.induced_fields[i+1] = np.dot(self.activations[i], current_weigths)
+            self.activations[i+1] = self.activation_func(self.induced_fields[i+1])
+
+        ## Saida ##
+        
+        last_weights = self.weights[-1]
+        self.induced_fields[-1] = np.dot(self.activations[-2], last_weights)
+        self.activations[-1] = step_func(self.induced_fields[-1], 0)
+
+        return self.activations[-1]
 
     def back_propagate(self, expected_output):
-        for i in reversed(range(len(self.n_neurons))): #index das camadas
-            for j in range(self.n_neurons[i]): #index de cada neuronio da camada atual
-                if i > 0:# i > 0, pois delta_weights < n_layers
-                    local_gradient = self.local_gradient(i, j, expected_output)-0 # local gradient do neuronio atual
-                    for k in range(len(self.activations[i-1])): # k - index da camada anterior 
-                        self.delta_weights[i-1][j][k] = self.weight_change(i-1, local_gradient, k)
 
-    def local_gradient(self, layer, neuron_index, expected_output):
-        local_gradient = 0
-        derivative = self.activation_func_derivative(self.activations[layer][neuron_index])
+        ## Camada de Saida ##
 
-        #Caso o neuronio seja da camada de saida
-        if layer == len(self.n_neurons)-1:
-            error = expected_output[neuron_index] - self.activations[layer][neuron_index]
-            local_gradient = error * derivative
-            self.local_gradients[layer][neuron_index] = local_gradient
-        #Caso o neuronio seja da camada escondida
-        else:
-            weights = self.weights[layer]
-            for j in range(self.n_neurons[layer+1]):
-                local_gradient += self.local_gradients[layer+1][j] * weights[j][neuron_index]
-            local_gradient = local_gradient * derivative
-            self.local_gradients[layer][neuron_index] = local_gradient
+        error = expected_output - self.activations[-1]
+
+        self.local_gradients[-1] = error * self.activation_func_derivative(self.activations[-1])
         
-        # print(f"Local Gradient l{layer}-{neuron_index}: {local_gradient}")
-        return local_gradient
+        output_local_gradients = np.array(self.local_gradients[-1], ndmin=2)
+        previous_activations = self.activations[-2].reshape(self.activations[-2].shape[0], -1)
+
+        self.delta_weights[-1] = np.dot(previous_activations, output_local_gradients) * self.learning_rate
+
+        ## Camadas Escondidas ## 
+
+        for i in reversed(range(len(self.weights)-1)):
+            ## Calculo Gradientes Locais para camadas escondidas ##
+            local_gradients_in = np.dot(self.local_gradients[i+2], self.weights[i+1].T)
+            self.local_gradients[i+1] = local_gradients_in * self.activation_func_derivative(self.induced_fields[i+1])
+
+            previous_activations = self.activations[i].reshape(self.activations[i].shape[0], -1)
+
+            self.delta_weights[i] = np.dot(previous_activations, np.array(self.local_gradients[i+1], ndmin=2)) * self.learning_rate
 
     def train(self, training_dataset, test_dataset, max_epoch, min_accuracy):
-        #Validation variables
+        #Variaveis da Validacao
         accuracy = 0
-
         sum_training_instant_errors = 0
         mean_sqrt_error_training = 0
 
@@ -136,10 +109,10 @@ class MLP(object):
 
         sum_mean_sqrt_errors_test = 0
 
-        #step 0
+        #Passo 0
         self.init_weights()
 
-        ## Save Initial Weigths ## 
+        ## Salvando Pesos Inciais ## 
         self.save_initial_weights()
         ##########################
 
@@ -150,30 +123,29 @@ class MLP(object):
         test_labels = test_dataset[:, self.n_neurons[0]:]
 
         stop_condition = False
-        #step 1
+        #Passo 1
         while not stop_condition:
-            #Executar epocas
+            #Executando Epocas
             print(f"###########################Epoca: {self.epochs+1}#################################")
 
             sum_training_instant_errors = 0
-            #step 3, 4 e 5 
+            #Passos 3, 4 e 5
+            print(len(training_data))
             for i, data in enumerate(training_data):
                 #feed_forward
                 input = data
                 expected_output = training_labels[i]
                 output = self.feed_forward(input)
 
-            #step 6 e 7 
+            #Passos 6 e 7 
                 #backpropagation
                 self.back_propagate(expected_output)
                 # self.print_weights()
                 # self.print_delta_weights()
-            #step 8
+            #Passo 8
                 #Weights update
                 for i in range(len(self.weights)):  
-                    for j in range(len(self.weights[i])):
-                        for k in range(len(self.weights[i][j])):
-                            self.weights[i][j][k] += self.delta_weights[i][j][k] 
+                    self.weights[i] = self.weights[i] + self.delta_weights[i]
                 
                 sum_training_instant_errors += self.instant_error(output, expected_output)
 
@@ -208,11 +180,12 @@ class MLP(object):
 
             self.epochs += 1
 
-            #step 9 - Parada Antecipada
-            if self.epochs >= max_epoch or (previous_mean_sqrt_error_test < current_mean_sqrt_error_test and abs((current_mean_sqrt_error_test - mean_sqrt_error_training)) < 0.15 and accuracy >= min_accuracy): ## substituir pela real condição para parada
+            #Passo 9(com parada antecipada)
+            print(f"Current sqrt error: {current_mean_sqrt_error_test}")
+            print(f"Previous sqrt error: {previous_mean_sqrt_error_test}")
+            if self.epochs >= max_epoch or (previous_mean_sqrt_error_test <= current_mean_sqrt_error_test and abs((current_mean_sqrt_error_test - mean_sqrt_error_training)) < 0.15 and accuracy >= min_accuracy): ## substituir pela real condição para parada
                 stop_condition = True
                 print("Treinamento realizado com última epoca sendo {} e acurácia {}".format(self.epochs, accuracy))
-                # self.print_weights()
 
     # Soma de todos os sqrt errors da camada de saida dividido por 2
     def instant_error(self, output, expected_output) -> float:
@@ -268,17 +241,23 @@ class MLP(object):
         print('\n')
 
     def print_activations(self):
+        print('\n#####Activations#####')
         for line in self.activations:
             print (*line)
+        print('####################')
         print('\n')
+        
 
     def print_induced_fields(self):
+        print('\n#####Induced Fields#####')
         for line in self.induced_fields:
             print (*line)
+        print('#######################')
         print('\n')
 
     def print_local_gradients(self):
-        print('Local gradients:')
+        print('\n#####Local Gradients#####')
         for line in self.local_gradients:
             print (*line)
+        print('########################')
         print('\n')
