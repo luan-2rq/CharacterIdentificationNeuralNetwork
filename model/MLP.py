@@ -1,3 +1,4 @@
+from cgi import test
 import random
 import logging
 
@@ -39,19 +40,15 @@ class MLP(object):
             self.activations.append(np.zeros((self.n_neurons[i])))
             self.induced_fields.append(np.zeros((self.n_neurons[i])))
             self.local_gradients.append(np.zeros((self.n_neurons[i])))
-        
-        np.random.seed(25454)
 
     # Inicialização dos pesos
-    def init_weights(self):
+    def init_weights(self):  
+        np.random.seed(12345)
         for i in range(len(self.n_neurons)-1):
-            n_cols = self.n_neurons[i] 
-            n_rows = self.n_neurons[i+1]
             weight_layer = np.random.uniform(-1,1, (self.n_neurons[i], self.n_neurons[i+1]))
             delta_weights_layer = np.random.uniform(0,0, (self.n_neurons[i], self.n_neurons[i+1]))
             self.weights.append(weight_layer)
             self.delta_weights.append(delta_weights_layer)
-        self.print_weights()
         
     def feed_forward(self, input):
         ## Camada de entrada ##
@@ -97,17 +94,14 @@ class MLP(object):
 
             self.delta_weights[i] = np.dot(previous_activations, np.array(self.local_gradients[i+1], ndmin=2)) * self.learning_rate
 
-    def train(self, training_dataset, test_dataset, max_epoch, min_accuracy):
+    def train(self, dataset_training, dataset_validation, max_epoch, min_accuracy):
         #Variaveis da Validacao
         accuracy = 0
         sum_training_instant_errors = 0
         mean_sqrt_error_training = 0
 
         sum_test_instant_errors = 0
-        previous_mean_sqrt_error_test = 0
-        current_mean_sqrt_error_test = 1
-
-        sum_mean_sqrt_errors_test = 0
+        mean_sqrt_error_test = 1
 
         #Passo 0
         self.init_weights()
@@ -116,26 +110,29 @@ class MLP(object):
         self.save_initial_weights()
         ##########################
 
-        ## Preparing data
-        training_data = training_dataset[:,:-self.n_neurons[-1]]
-        training_labels = training_dataset[:, self.n_neurons[0]:]
-        test_data = test_dataset[:, :-self.n_neurons[-1]]
-        test_labels = test_dataset[:, self.n_neurons[0]:]
+        training_data = dataset_training[:, :-self.n_neurons[-1]]
+        test_data = dataset_validation[:, :-self.n_neurons[-1]]
+        training_labels = dataset_training[:, self.n_neurons[0]:]
+        test_labels = dataset_validation[:, self.n_neurons[0]:]
 
         stop_condition = False
         #Passo 1
         while not stop_condition:
+            ## Preparing data
+
             #Executando Epocas
             print(f"###########################Epoca: {self.epochs+1}#################################")
 
             sum_training_instant_errors = 0
             #Passos 3, 4 e 5
-            print(len(training_data))
             for i, data in enumerate(training_data):
                 #feed_forward
                 input = data
                 expected_output = training_labels[i]
                 output = self.feed_forward(input)
+
+                instant_error = self.mean_squad_error(output, expected_output)
+                sum_training_instant_errors += instant_error
 
             #Passos 6 e 7 
                 #backpropagation
@@ -147,45 +144,44 @@ class MLP(object):
                 for i in range(len(self.weights)):  
                     self.weights[i] = self.weights[i] + self.delta_weights[i]
                 
-                sum_training_instant_errors += self.instant_error(output, expected_output)
-
             mean_sqrt_error_training = sum_training_instant_errors / len(training_data)
 
-            print(f"Erro Quadrado Medio Treinamento: {round(mean_sqrt_error_training, 3)}")
+            print(f"Erro Quadrado Medio Treinamento: {mean_sqrt_error_training}")
 
             ######## Teste ########
             sum_test_instant_errors = 0
+            correct_predictions_test = 0
             for i, data in enumerate(test_data):
 
                 input = data
                 expected_output = test_labels[i]
                 output = self.feed_forward(input)
 
-                sum_test_instant_errors += self.instant_error(output, expected_output)
+                instant_error = self.mean_squad_error(output, expected_output)
+                sum_test_instant_errors += instant_error
 
-            previous_mean_sqrt_error_test = current_mean_sqrt_error_test
-            current_mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
+                correct_predictions_test += 1 if instant_error == 0 else 0
+
+            mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
             
-            print(f"Erro Quadrado Medio Teste: {round(current_mean_sqrt_error_test, 3)}\n")
+            print(f"Erro Quadrado Medio Teste: {mean_sqrt_error_test}\n")
 
             #######################
 
-            ######### Accuracy ###########
+            ######### Acuracia Teste ###########
 
-            sum_mean_sqrt_errors_test += current_mean_sqrt_error_test
-            accuracy = 1 - (sum_mean_sqrt_errors_test/(self.epochs+1))
-            print(f'Acuracia {accuracy}')
+            accuracy = (correct_predictions_test/len(test_data))
+            print(f'Acuracia Teste {accuracy}')
 
             #######################
 
             self.epochs += 1
 
             #Passo 9(com parada antecipada)
-            print(f"Current sqrt error: {current_mean_sqrt_error_test}")
-            print(f"Previous sqrt error: {previous_mean_sqrt_error_test}")
-            if self.epochs >= max_epoch or (previous_mean_sqrt_error_test <= current_mean_sqrt_error_test and abs((current_mean_sqrt_error_test - mean_sqrt_error_training)) < 0.15 and accuracy >= min_accuracy): ## substituir pela real condição para parada
+            if self.epochs >= max_epoch or (min_accuracy < accuracy and abs(mean_sqrt_error_training - mean_sqrt_error_test) < 0.17): ## substituir pela real condição para parada
                 stop_condition = True
-                print("Treinamento realizado com última epoca sendo {} e acurácia {}".format(self.epochs, accuracy))
+                print(f"Treinamento realizado em {self.epochs} epocas.")   
+                print(f"A acuracia final da validaçao foi {accuracy}.")
 
     # Soma de todos os sqrt errors da camada de saida dividido por 2
     def instant_error(self, output, expected_output) -> float:
@@ -195,10 +191,15 @@ class MLP(object):
         instant_error = 0.5*sum_sqrt_error
         return instant_error
 
+    def mean_squad_error(self, label, output):
+        return np.average((label - output)**2)
+
     def predict(self, input):
-        output = self.feed_forward(input)
-        print(f"Saida: {output}\n")
-        print(self.answer(output))
+        outputs = []
+        for tuple in input:
+            output = self.feed_forward(tuple)
+            print(f"Saida 1: {self.answer(output)}\n")
+            outputs.append(output)
 
 
     def save_initial_weights(self):

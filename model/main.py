@@ -16,13 +16,16 @@ def main():
     # labels = df_limpo[:,63:70]
 
     dataset = np.concatenate((df_limpo, df_ruido, df_ruido_20))
+
+    dataset_test = np.array(df_ruido_20)
+
     # dataset = np.array(df_limpo)
 
     #Cada caractere tera 63 pixeis que os representam, portanto terao 63 neuronios de entrada
     n_neurons_input = 63
     
     #Este parametro deve ser definido para o nosso problema atraves cd de experimentacao
-    n_hidden_layers_neurons = [29] #1 camada com 15 neuronios
+    n_hidden_layers_neurons = [40, 30, 15] #1 camada com 15 neuronios
     
     #Serao 7 classes diferentes de caracteres, portanto serao 7 neuronios de saida
     n_neurons_output = 7
@@ -37,32 +40,33 @@ def main():
     data_size = len(dataset)
     training_data_end = floor(training_data_percentage * data_size)
 
-    training_dataset = dataset[0:training_data_end,:]
+    training_dataset = dataset#[0:training_data_end,:]
     test_dataset = dataset[training_data_end:data_size,:]
 
-    mlp_limpo.train(training_dataset, test_dataset, 20000, 0.7)
+    mlp_limpo.train(training_dataset, test_dataset, 5000, 0.75)
+
+    dataset_test = dataset_test[:,0:63]
+
+    for i in range(len(dataset_test)):
+        mlp_limpo.predict(dataset_test[i])
+
+
+    print("\n---------------- Resultados ----------------")
+    print("Acurácia: {}".format((metrics.accuracy_score(target, testes))))
+    print("Precisão: {}".format(metrics.precision_score(target, testes, average='micro')))
+    print("Recall: {}".format(metrics.recall_score(target, testes, average='micro')))
+    print("F1_score: {}".format(metrics.f1_score(target, testes, average='micro')))
+    print("Roc_Auc_score: {}".format(
+        metrics.roc_auc_score(target, testes, average='micro')))
     
-    dataset = dataset[:,0:63]
-    for i in range(len(dataset)):
-        mlp_limpo.predict(dataset[i])
+    m_c = metrics.confusion_matrix(target.argmax(axis=1), testes.argmax(axis=1))
+    print(m_c)
 
-
-    # # print("\n---------------- Resultados ----------------")
-    # # print("Acurácia: {}".format((metrics.accuracy_score(target, testes))))
-    # # print("Precisão: {}".format(metrics.precision_score(target, testes, average='micro')))
-    # # print("Recall: {}".format(metrics.recall_score(target, testes, average='micro')))
-    # # print("F1_score: {}".format(metrics.f1_score(target, testes, average='micro')))
-    # # print("Roc_Auc_score: {}".format(
-    # #     metrics.roc_auc_score(target, testes, average='micro')))
-    
-    # # m_c = metrics.confusion_matrix(target.argmax(axis=1), testes.argmax(axis=1))
-    # # print(m_c)
-
-    # # df_cm = pd.DataFrame(m_c, index=[i for i in "ABCDEJK"],
-    # #                     columns=[i for i in "ABCDEJK"])
-    # # plt.figure(figsize=(7, 6))
-    # # sn.heatmap(df_cm, annot=True)
-    # # plt.show()
+    df_cm = pd.DataFrame(m_c, index=[i for i in "ABCDEJK"],
+                        columns=[i for i in "ABCDEJK"])
+    plt.figure(figsize=(7, 6))
+    sn.heatmap(df_cm, annot=True)
+    plt.show()
 
 if __name__ == "__main__":
     main()
