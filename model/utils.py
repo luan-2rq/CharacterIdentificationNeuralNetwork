@@ -20,13 +20,21 @@ def sigmoid_derivative_func(input):
     return np.array(derivatives)
 
 ##Retorna um array contendo a aplicacao da funcao para cada item do array de entrada recebida
+def output_func(input):
+    result = [0]*len(input)
+    max_index, max_value = 0, input[0]
+    for i, x in enumerate(input[1:]):
+        if x > max_value:
+            max_index = i+1
+            max_value = x
+    result[max_index] = 1
+    return np.array(result)
+
 def step_func(input, theta):
-    result = []
-    for x in input:
-        if x >= theta:
-            result.append(1)
-        else:
-            result.append(0)
+    result = [0]*len(input)
+    for i, x in enumerate(input):
+        if x > theta:
+            result[i] = 1
     return np.array(result)
 
 def error(d, y):

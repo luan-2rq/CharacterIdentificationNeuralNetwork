@@ -1,6 +1,5 @@
 from MLP import *
 import pandas as pd
-from training_data import TrainingTuple
 from utils import *
 from math import *
 import sklearn.metrics as metrics
@@ -8,65 +7,56 @@ import matplotlib.pyplot as plt
 import seaborn as sn
 
 def main():
-    
-    #Leitura do arquivo do conjunto de dados
-    df_limpo = pd.read_csv(r"C:\Users\Luan Monteiro\MLP_Neural_Network-Implementation\data\caracteres-limpo.csv", delimiter=",", header=None, encoding='UTF-8-sig')
-    df_ruido = pd.read_csv(r"C:\Users\Luan Monteiro\MLP_Neural_Network-Implementation\data\caracteres-ruido.csv", delimiter=",", header=None, encoding='UTF-8')
-    df_ruido_20 = pd.read_csv(r"C:\Users\Luan Monteiro\MLP_Neural_Network-Implementation\data\caracteres_ruido20.csv", delimiter=",", header=None, encoding='UTF-8')
-    # data = df_limpo[:,0:2]
-    # labels = df_limpo[:,2:3]
-    # data = df_limpo[:,0:63]
-    # labels = df_limpo[:,63:70]
 
-    dataset = np.concatenate((df_limpo, df_ruido, df_ruido_20))
+    #Carregando dados 
+    df_limpo = np.array(pd.read_csv(r"..\data\caracteres-limpo.csv", delimiter=",", header=None, encoding='UTF-8'))
+    df_ruido = np.array(pd.read_csv(r"..\data\caracteres-ruido.csv", delimiter=",", header=None, encoding='UTF-8'))
+    df_ruido_20 = pd.read_csv(r"..\data\caracteres_ruido20.csv", delimiter=",", header=None, encoding='UTF-8')
 
-    dataset_test = np.concatenate((df_limpo, df_ruido, df_ruido_20))
+    #Conjunto de treino
+    training_dataset = np.array(df_limpo)
+    #Conjunto de validacao
+    test_dataset = np.array(df_ruido)
 
-    # dataset = np.array(df_limpo)
+    ##Conjunto que servira de teste
+    test_dataset = np.array(df_ruido_20)
 
     #Cada caractere tera 63 pixeis que os representam, portanto terao 63 neuronios de entrada
     n_neurons_input = 63
-    
-    #Este parametro deve ser definido para o nosso problema atraves cd de experimentacao
-    n_hidden_layers_neurons = [40, 30, 15] #1 camada com 15 neuronios
-    
+    #Camadas escondida, contendo 5 camadas 
+    n_hidden_layers_neurons = [45, 30, 21, 20, 10]
     #Serao 7 classes diferentes de caracteres, portanto serao 7 neuronios de saida
     n_neurons_output = 7
+    #Taxa de aprendizado deve ser entre [0, 1] (nao pode ser inicializado com 0)
+    learning_rate = 0.008
 
-    #Taxa de aprendizado deve ser entre ]0, 1] (nao pode ser inicializado com 0)
-    learning_rate = 0.001
+    #Inicializando a instancia da rede neural
+    mlp = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate)
 
-    mlp_limpo = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate)
-    # mlp_limpo.test_feed_forward()
+    #Treinando a rede
+    mlp.train(training_dataset, test_dataset, 4000, min_accuracy=0.75, early_stopping=True)
 
-    training_data_percentage = 0.7
-    data_size = len(dataset)
-    training_data_end = floor(training_data_percentage * data_size)
+    #Conjunto de teste
+    test_dataset_test_data = test_dataset[:,0:63]
+    test_dataset_labels = test_dataset[:,63:70]
 
-    training_dataset = dataset[0:training_data_end,:]
-    test_dataset = dataset[training_data_end:data_size,:]
+    print("###########################Teste - Resultados#################################")
 
-    mlp_limpo.train(training_dataset, test_dataset, 5000, 0.75, True)
+    #Predicoes feitas pela rede a partir do conjunto de teste. Eh devolvido um array com as saidas pelo metodo predict.
+    predictions = mlp.predict(test_dataset_test_data)
 
-    dataset_test_in = dataset_test[:,0:63]
-    dataset_labels = dataset_test[:,63:70]
-
-    predictions = mlp_limpo.predict(dataset_test_in)
-
-    print("Acurácia: {}".format((metrics.accuracy_score(dataset_labels, predictions))))
-    print("Precisão: {}".format(metrics.precision_score(dataset_labels, predictions, average='micro')))
-    print("Recall: {}".format(metrics.recall_score(dataset_labels, predictions, average='micro')))
-    print("F1_score: {}".format(metrics.f1_score(dataset_labels, predictions, average='micro')))
-    print("Roc_Auc_score: {}".format(
-        metrics.roc_auc_score(dataset_labels, predictions, average='micro')))
+    print(f"Acuracia: {metrics.accuracy_score(test_dataset_labels, predictions)}")
+    print(f"Precisao: {metrics.precision_score(test_dataset_labels, predictions, average='micro')}")
+    print(f"Recall: {metrics.recall_score(test_dataset_labels, predictions, average='micro')}")
+    print(f"F1 Score: {metrics.f1_score(test_dataset_labels, predictions, average='micro')}")
+    print(f"ROC AUC Score: {metrics.roc_auc_score(test_dataset_labels, predictions, average='micro')}")
     
-    m_c = metrics.confusion_matrix(dataset_labels.argmax(axis=1), predictions.argmax(axis=1))
-    print(m_c)
+    confusion_matrix = metrics.confusion_matrix(np.argmax(test_dataset_labels, axis=1), np.argmax(predictions, axis=1))
 
-    df_cm = pd.DataFrame(m_c, index=[i for i in "ABCDEJK"],
+    confusion_matrix_data = pd.DataFrame(confusion_matrix, index=[i for i in "ABCDEJK"],
                         columns=[i for i in "ABCDEJK"])
     plt.figure(figsize=(7, 6))
-    sn.heatmap(df_cm, annot=True)
+    sn.heatmap(confusion_matrix_data, annot=True)
     plt.show()
 
 if __name__ == "__main__":

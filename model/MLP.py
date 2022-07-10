@@ -1,21 +1,12 @@
-from cgi import test
-import random
-import logging
-
-from pyrsistent import l
-from sklearn import datasets
+from ast import Try
+import sys
 from utils import *
 import numpy as np
-import pandas as pd
-from sklearn.model_selection import (
-    train_test_split,
-    KFold
-)
-
+import os
 
 class MLP(object):
     # n_output_neurons eh uma lista, assim eh possivel determinar o numero de neuronios em cada uma das hidden layers
-    def __init__(self, n_input_neurons = 63, n_output_neurons = 7, n_hidden_layers_neurons = [15], learning_rate = 0.2, activation_func = sigmoid_func, activation_func_derivative = sigmoid_derivative_func, output_func = step_func):
+    def __init__(self, n_input_neurons = 63, n_output_neurons = 7, n_hidden_layers_neurons = [15], learning_rate = 0.2, activation_func = sigmoid_func, activation_func_derivative = sigmoid_derivative_func, output_func = output_func):
         self.n_input_neurons = n_input_neurons
         self.n_output_neurons = n_output_neurons
         self.n_hidden_layers_neurons = n_hidden_layers_neurons
@@ -35,6 +26,7 @@ class MLP(object):
 
         self.activation_func = activation_func
         self.activation_func_derivative = activation_func_derivative
+        self.output_func = output_func
 
         for i in range(len(self.n_neurons)):
             self.activations.append(np.zeros((self.n_neurons[i]+1)))
@@ -80,9 +72,9 @@ class MLP(object):
         induced_field = np.insert(induced_field, 0, 1)
 
         self.induced_fields[-1] = induced_field
-        self.activations[-1] = step_func(self.induced_fields[-1], 0)
+        self.activations[-1] = self.induced_fields[-1]
 
-        return self.activations[-1][1:]
+        return self.output_func(self.induced_fields[-1][1:])
 
     def back_propagate(self, expected_output):
 
@@ -179,14 +171,14 @@ class MLP(object):
 
                 mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
                 
-                print(f"Erro Quadrado Medio Teste: {mean_sqrt_error_test}\n")
+                print(f"Erro Quadrado Medio Validacao: {mean_sqrt_error_test}")
 
                 #######################
 
                 ######### Validacao Teste ###########
 
                 accuracy = (correct_predictions_test/len(test_data))
-                print(f'Acuracia Teste {accuracy}')
+                print(f'Acuracia Validacao: {accuracy}\n')
 
                 #######################
 
@@ -198,7 +190,7 @@ class MLP(object):
                 print(f"Treinamento realizado em {self.epochs} epocas.")   
                 print(f"A acuracia final da validaçao foi {accuracy}.")
             elif early_stopping:
-                if (min_accuracy < accuracy and abs(mean_sqrt_error_training - mean_sqrt_error_test) < 0.17): ## substituir pela real condição para parada
+                if (mean_sqrt_error_training <= 0.01): ## substituir pela real condição para parada
                     stop_condition = True
                     print(f"Treinamento realizado em {self.epochs} epocas.")   
                     print(f"A acuracia final da validaçao foi {accuracy}.")
@@ -215,7 +207,7 @@ class MLP(object):
         outputs = []
         for i, tuple in enumerate(dataset):
             output = self.feed_forward(tuple)
-            print(f"Saida {i}: {self.answer(output)}\n")
+            print(f"Saida {i}: {self.answer(output)}")
             outputs.append(output)
         return outputs
 
@@ -278,5 +270,12 @@ class MLP(object):
         print('\n')
 
     def save_initial_weights(self):
-        initial_weigths_path = ""
+        np.set_printoptions(threshold=sys.maxsize)
+        try:
+            folder = r"..\useful_files"
+            os.mkdir(folder)
+        except:
+            pass
+        initial_weigths_path = r"..\useful_files\initial_weights.csv"
+        np.savetxt(initial_weigths_path, self.weights, delimiter=',', fmt='%s')
     
