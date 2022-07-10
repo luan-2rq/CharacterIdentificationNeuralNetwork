@@ -1,0 +1,20 @@
+#Número de neuronios na camada de entrada
+    n_neurons_input = 63
+
+#Número de neuronios em cada camada escondida
+    n_hidden_layers_neurons = [45, 30, 21, 20, 10]
+
+#Número de neuronios na camada de saída
+    n_neurons_output = 7
+
+#Taxa de aprendizado
+    learning_rate = 0.01
+
+#Número máximo de épocas do treinamento
+    max_epochs = 4000
+
+#Acurácia mínima da validação(Parada Antecipada)
+    min_accuracy=0.7
+
+#Erro quadratico mínima do treinamento(Parada Antecipada)
+    min_mean_sqrt_error_training = 0.01
