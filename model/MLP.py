@@ -190,7 +190,6 @@ class MLP(object):
                 stop_condition = True
                 self.save_weights("final_weights_no_early_stopping.csv")
                 print(f"Treinamento realizado em {self.epochs} epocas.")   
-                print(f"A acuracia final da validaçao foi {validation_accuracy}.")
             elif early_stopping:
                 if (min_accuracy <= validation_accuracy and previous_mean_sqrt_error_test <= current_mean_sqrt_error_test and mean_sqrt_error_training < min_mean_sqrt_error_training): ## substituir pela real condição para parada
                     stop_condition = True

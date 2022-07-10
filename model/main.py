@@ -35,7 +35,7 @@ def main():
     mlp = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate)
 
     #Treinando a rede
-    mlp.train(training_dataset, validation_dataset, 4000, early_stopping=True, min_accuracy=0.7, min_mean_sqrt_error_training=0.015)
+    mlp.train(training_dataset, validation_dataset, 2000, early_stopping=False, min_accuracy=0.7, min_mean_sqrt_error_training=0.015)
 
     #Conjunto de teste
     test_dataset_test_data = test_dataset[:,0:63]
