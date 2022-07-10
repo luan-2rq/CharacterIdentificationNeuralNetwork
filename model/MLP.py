@@ -37,46 +37,60 @@ class MLP(object):
         self.activation_func_derivative = activation_func_derivative
 
         for i in range(len(self.n_neurons)):
-            self.activations.append(np.zeros((self.n_neurons[i])))
-            self.induced_fields.append(np.zeros((self.n_neurons[i])))
+            self.activations.append(np.zeros((self.n_neurons[i]+1)))
+            self.induced_fields.append(np.zeros((self.n_neurons[i]+1)))
             self.local_gradients.append(np.zeros((self.n_neurons[i])))
 
     # Inicialização dos pesos
     def init_weights(self):  
         np.random.seed(12345)
         for i in range(len(self.n_neurons)-1):
-            weight_layer = np.random.uniform(-1,1, (self.n_neurons[i], self.n_neurons[i+1]))
-            delta_weights_layer = np.random.uniform(0,0, (self.n_neurons[i], self.n_neurons[i+1]))
+            weight_layer = np.random.uniform(-1,1, (self.n_neurons[i]+1, self.n_neurons[i+1]))
+            delta_weights_layer = np.random.uniform(0,0, (self.n_neurons[i]+1, self.n_neurons[i+1]))
             self.weights.append(weight_layer)
             self.delta_weights.append(delta_weights_layer)
         
     def feed_forward(self, input):
         ## Camada de entrada ##
 
+        input = np.insert(input, 0, 1)
         self.activations[0] = input[:]
         self.induced_fields[0] = input[:]
 
         ## Camadas Intermediarias ##
 
         for i, current_weigths in enumerate(self.weights[:-1]):
-            self.induced_fields[i+1] = np.dot(self.activations[i], current_weigths)
+            induced_field = np.dot(self.activations[i][1:], current_weigths[1:,:])
+
+            ## Configurando o Bias ##
+            induced_field = np.insert(induced_field, 0, 1)
+            #########################
+
+            self.induced_fields[i+1] = induced_field
             self.activations[i+1] = self.activation_func(self.induced_fields[i+1])
 
-        ## Saida ##
+            ## Configurando o Bias ##
+            self.activations[i+1][0] = 1
+            #########################
+
+        ## Camada de Saida ##
         
-        last_weights = self.weights[-1]
-        self.induced_fields[-1] = np.dot(self.activations[-2], last_weights)
+        last_weights = self.weights[-1][1:,:]
+        induced_field = np.dot(self.activations[-2][1:], last_weights)
+        induced_field = np.insert(induced_field, 0, 1)
+
+        self.induced_fields[-1] = induced_field
         self.activations[-1] = step_func(self.induced_fields[-1], 0)
 
-        return self.activations[-1]
+        return self.activations[-1][1:]
 
     def back_propagate(self, expected_output):
 
         ## Camada de Saida ##
 
-        error = expected_output - self.activations[-1]
+        error = expected_output - self.activations[-1][1:]
 
-        self.local_gradients[-1] = error * self.activation_func_derivative(self.activations[-1])
+        self.local_gradients[-1] = error * self.activation_func_derivative(self.activations[-1][1:])
         
         output_local_gradients = np.array(self.local_gradients[-1], ndmin=2)
         previous_activations = self.activations[-2].reshape(self.activations[-2].shape[0], -1)
@@ -87,14 +101,14 @@ class MLP(object):
 
         for i in reversed(range(len(self.weights)-1)):
             ## Calculo Gradientes Locais para camadas escondidas ##
-            local_gradients_in = np.dot(self.local_gradients[i+2], self.weights[i+1].T)
-            self.local_gradients[i+1] = local_gradients_in * self.activation_func_derivative(self.induced_fields[i+1])
+            local_gradients_in = np.dot(self.local_gradients[i+2], self.weights[i+1][1:,:].T)
+            self.local_gradients[i+1] = local_gradients_in * self.activation_func_derivative(self.induced_fields[i+1][1:])
 
             previous_activations = self.activations[i].reshape(self.activations[i].shape[0], -1)
 
             self.delta_weights[i] = np.dot(previous_activations, np.array(self.local_gradients[i+1], ndmin=2)) * self.learning_rate
 
-    def train(self, dataset_training, dataset_validation, max_epoch, min_accuracy):
+    def train(self, dataset_training, dataset_validation, max_epoch, min_accuracy, early_stopping):
         #Variaveis da Validacao
         accuracy = 0
         sum_training_instant_errors = 0
@@ -131,7 +145,7 @@ class MLP(object):
                 expected_output = training_labels[i]
                 output = self.feed_forward(input)
 
-                instant_error = self.mean_squad_error(output, expected_output)
+                instant_error = self.instant_error(output, expected_output)
                 sum_training_instant_errors += instant_error
 
             #Passos 6 e 7 
@@ -148,40 +162,46 @@ class MLP(object):
 
             print(f"Erro Quadrado Medio Treinamento: {mean_sqrt_error_training}")
 
-            ######## Teste ########
-            sum_test_instant_errors = 0
-            correct_predictions_test = 0
-            for i, data in enumerate(test_data):
+            if early_stopping:
+                ######## Validacao ########
+                sum_test_instant_errors = 0
+                correct_predictions_test = 0
+                for i, data in enumerate(test_data):
 
-                input = data
-                expected_output = test_labels[i]
-                output = self.feed_forward(input)
+                    input = data
+                    expected_output = test_labels[i]
+                    output = self.feed_forward(input)
 
-                instant_error = self.mean_squad_error(output, expected_output)
-                sum_test_instant_errors += instant_error
+                    instant_error = self.instant_error(output, expected_output)
+                    sum_test_instant_errors += instant_error
 
-                correct_predictions_test += 1 if instant_error == 0 else 0
+                    correct_predictions_test += 1 if instant_error == 0 else 0
 
-            mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
-            
-            print(f"Erro Quadrado Medio Teste: {mean_sqrt_error_test}\n")
+                mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
+                
+                print(f"Erro Quadrado Medio Teste: {mean_sqrt_error_test}\n")
 
-            #######################
+                #######################
 
-            ######### Acuracia Teste ###########
+                ######### Validacao Teste ###########
 
-            accuracy = (correct_predictions_test/len(test_data))
-            print(f'Acuracia Teste {accuracy}')
+                accuracy = (correct_predictions_test/len(test_data))
+                print(f'Acuracia Teste {accuracy}')
 
-            #######################
+                #######################
 
             self.epochs += 1
 
             #Passo 9(com parada antecipada)
-            if self.epochs >= max_epoch or (min_accuracy < accuracy and abs(mean_sqrt_error_training - mean_sqrt_error_test) < 0.17): ## substituir pela real condição para parada
+            if self.epochs >= max_epoch:
                 stop_condition = True
                 print(f"Treinamento realizado em {self.epochs} epocas.")   
                 print(f"A acuracia final da validaçao foi {accuracy}.")
+            elif early_stopping:
+                if (min_accuracy < accuracy and abs(mean_sqrt_error_training - mean_sqrt_error_test) < 0.17): ## substituir pela real condição para parada
+                    stop_condition = True
+                    print(f"Treinamento realizado em {self.epochs} epocas.")   
+                    print(f"A acuracia final da validaçao foi {accuracy}.")
 
     # Soma de todos os sqrt errors da camada de saida dividido por 2
     def instant_error(self, output, expected_output) -> float:
@@ -191,20 +211,14 @@ class MLP(object):
         instant_error = 0.5*sum_sqrt_error
         return instant_error
 
-    def mean_squad_error(self, label, output):
-        return np.average((label - output)**2)
-
-    def predict(self, input):
+    def predict(self, dataset):
         outputs = []
-        for tuple in input:
+        for i, tuple in enumerate(dataset):
             output = self.feed_forward(tuple)
-            print(f"Saida 1: {self.answer(output)}\n")
+            print(f"Saida {i}: {self.answer(output)}\n")
             outputs.append(output)
+        return outputs
 
-
-    def save_initial_weights(self):
-        initial_weigths_path = ""
-    
     def answer(self, output):
         answer = ""
         letters = ['A', 'B', 'C', 'D', 'E', 'J', 'K']
@@ -262,3 +276,7 @@ class MLP(object):
             print (*line)
         print('########################')
         print('\n')
+
+    def save_initial_weights(self):
+        initial_weigths_path = ""
+    

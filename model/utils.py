@@ -34,12 +34,3 @@ def error(d, y):
 
 def sqrt_error(d, y):
     return error(d, y)**2
-
-def bipolar(theta, input):
-    ativacao = []
-
-    for x in input:
-        ativacao.append(
-            1 if x >= theta else 0
-        )
-    return ativacao

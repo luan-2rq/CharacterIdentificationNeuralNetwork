@@ -3,6 +3,9 @@ import pandas as pd
 from training_data import TrainingTuple
 from utils import *
 from math import *
+import sklearn.metrics as metrics
+import matplotlib.pyplot as plt
+import seaborn as sn
 
 def main():
     
@@ -17,7 +20,7 @@ def main():
 
     dataset = np.concatenate((df_limpo, df_ruido, df_ruido_20))
 
-    dataset_test = np.array(df_ruido_20)
+    dataset_test = np.concatenate((df_limpo, df_ruido, df_ruido_20))
 
     # dataset = np.array(df_limpo)
 
@@ -40,26 +43,24 @@ def main():
     data_size = len(dataset)
     training_data_end = floor(training_data_percentage * data_size)
 
-    training_dataset = dataset#[0:training_data_end,:]
+    training_dataset = dataset[0:training_data_end,:]
     test_dataset = dataset[training_data_end:data_size,:]
 
-    mlp_limpo.train(training_dataset, test_dataset, 5000, 0.75)
+    mlp_limpo.train(training_dataset, test_dataset, 5000, 0.75, True)
 
-    dataset_test = dataset_test[:,0:63]
+    dataset_test_in = dataset_test[:,0:63]
+    dataset_labels = dataset_test[:,63:70]
 
-    for i in range(len(dataset_test)):
-        mlp_limpo.predict(dataset_test[i])
+    predictions = mlp_limpo.predict(dataset_test_in)
 
-
-    print("\n---------------- Resultados ----------------")
-    print("Acurácia: {}".format((metrics.accuracy_score(target, testes))))
-    print("Precisão: {}".format(metrics.precision_score(target, testes, average='micro')))
-    print("Recall: {}".format(metrics.recall_score(target, testes, average='micro')))
-    print("F1_score: {}".format(metrics.f1_score(target, testes, average='micro')))
+    print("Acurácia: {}".format((metrics.accuracy_score(dataset_labels, predictions))))
+    print("Precisão: {}".format(metrics.precision_score(dataset_labels, predictions, average='micro')))
+    print("Recall: {}".format(metrics.recall_score(dataset_labels, predictions, average='micro')))
+    print("F1_score: {}".format(metrics.f1_score(dataset_labels, predictions, average='micro')))
     print("Roc_Auc_score: {}".format(
-        metrics.roc_auc_score(target, testes, average='micro')))
+        metrics.roc_auc_score(dataset_labels, predictions, average='micro')))
     
-    m_c = metrics.confusion_matrix(target.argmax(axis=1), testes.argmax(axis=1))
+    m_c = metrics.confusion_matrix(dataset_labels.argmax(axis=1), predictions.argmax(axis=1))
     print(m_c)
 
     df_cm = pd.DataFrame(m_c, index=[i for i in "ABCDEJK"],
