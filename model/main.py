@@ -15,8 +15,9 @@ def main():
 
     #Conjunto de treino
     training_dataset = np.array(df_limpo)
+
     #Conjunto de validacao
-    test_dataset = np.array(df_ruido)
+    validation_dataset = np.array(df_ruido)
 
     ##Conjunto que servira de teste
     test_dataset = np.array(df_ruido_20)
@@ -28,13 +29,13 @@ def main():
     #Serao 7 classes diferentes de caracteres, portanto serao 7 neuronios de saida
     n_neurons_output = 7
     #Taxa de aprendizado deve ser entre [0, 1] (nao pode ser inicializado com 0)
-    learning_rate = 0.008
+    learning_rate = 0.01
 
     #Inicializando a instancia da rede neural
     mlp = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate)
 
     #Treinando a rede
-    mlp.train(training_dataset, test_dataset, 4000, min_accuracy=0.75, early_stopping=True)
+    mlp.train(training_dataset, validation_dataset, 4000, early_stopping=True, min_accuracy=0.7, min_mean_sqrt_error_training=0.01)
 
     #Conjunto de teste
     test_dataset_test_data = test_dataset[:,0:63]

@@ -100,20 +100,21 @@ class MLP(object):
 
             self.delta_weights[i] = np.dot(previous_activations, np.array(self.local_gradients[i+1], ndmin=2)) * self.learning_rate
 
-    def train(self, dataset_training, dataset_validation, max_epoch, min_accuracy, early_stopping):
+    def train(self, dataset_training, dataset_validation, max_epoch, early_stopping, min_accuracy, min_mean_sqrt_error_training):
         #Variaveis da Validacao
-        accuracy = 0
+        validation_accuracy = 0
         sum_training_instant_errors = 0
         mean_sqrt_error_training = 0
 
         sum_test_instant_errors = 0
-        mean_sqrt_error_test = 1
+        current_mean_sqrt_error_test = 0
+        previous_mean_sqrt_error_test = 1
 
         #Passo 0
         self.init_weights()
 
         ## Salvando Pesos Inciais ## 
-        self.save_initial_weights()
+        self.save_weights("initial_weights.csv")
         ##########################
 
         training_data = dataset_training[:, :-self.n_neurons[-1]]
@@ -169,16 +170,17 @@ class MLP(object):
 
                     correct_predictions_test += 1 if instant_error == 0 else 0
 
-                mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
+                previous_mean_sqrt_error_test = current_mean_sqrt_error_test
+                current_mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
                 
-                print(f"Erro Quadrado Medio Validacao: {mean_sqrt_error_test}")
+                print(f"Erro Quadrado Medio Validacao: {current_mean_sqrt_error_test}")
 
                 #######################
 
                 ######### Validacao Teste ###########
 
-                accuracy = (correct_predictions_test/len(test_data))
-                print(f'Acuracia Validacao: {accuracy}\n')
+                validation_accuracy = (correct_predictions_test/len(test_data))
+                print(f'Acuracia Validacao: {validation_accuracy}\n')
 
                 #######################
 
@@ -187,13 +189,14 @@ class MLP(object):
             #Passo 9(com parada antecipada)
             if self.epochs >= max_epoch:
                 stop_condition = True
-                print(f"Treinamento realizado em {self.epochs} epocas.")   
-                print(f"A acuracia final da validaçao foi {accuracy}.")
+                self.save_weights("final_weights_no_early_stopping.csv")
             elif early_stopping:
-                if (mean_sqrt_error_training <= 0.01): ## substituir pela real condição para parada
+                if (min_accuracy <= validation_accuracy and previous_mean_sqrt_error_test <= current_mean_sqrt_error_test and mean_sqrt_error_training < min_mean_sqrt_error_training): ## substituir pela real condição para parada
                     stop_condition = True
-                    print(f"Treinamento realizado em {self.epochs} epocas.")   
-                    print(f"A acuracia final da validaçao foi {accuracy}.")
+                    self.save_weights("final_weights_early_stopping.csv")
+                    
+            print(f"Treinamento realizado em {self.epochs} epocas.")   
+            print(f"A acuracia final da validaçao foi {validation_accuracy}.")
 
     # Soma de todos os sqrt errors da camada de saida dividido por 2
     def instant_error(self, output, expected_output) -> float:
@@ -269,13 +272,13 @@ class MLP(object):
         print('########################')
         print('\n')
 
-    def save_initial_weights(self):
+    def save_weights(self, file_name):
         np.set_printoptions(threshold=sys.maxsize)
         try:
             folder = r"..\useful_files"
             os.mkdir(folder)
         except:
             pass
-        initial_weigths_path = r"..\useful_files\initial_weights.csv"
+        initial_weigths_path = r"..\useful_files\{}".format(file_name)
         np.savetxt(initial_weigths_path, self.weights, delimiter=',', fmt='%s')
     
