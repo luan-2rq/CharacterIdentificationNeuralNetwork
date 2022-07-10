@@ -1,4 +1,3 @@
-from ast import Try
 import sys
 from utils import *
 import numpy as np
@@ -72,9 +71,9 @@ class MLP(object):
         induced_field = np.insert(induced_field, 0, 1)
 
         self.induced_fields[-1] = induced_field
-        self.activations[-1] = self.induced_fields[-1]
+        self.activations[-1] = self.activation_func(self.induced_fields[-1])
 
-        return self.output_func(self.induced_fields[-1][1:])
+        return self.output_func(self.activations[-1][1:])
 
     def back_propagate(self, expected_output):
 
@@ -190,13 +189,16 @@ class MLP(object):
             if self.epochs >= max_epoch:
                 stop_condition = True
                 self.save_weights("final_weights_no_early_stopping.csv")
+                print(f"Treinamento realizado em {self.epochs} epocas.")   
+                print(f"A acuracia final da validaçao foi {validation_accuracy}.")
             elif early_stopping:
                 if (min_accuracy <= validation_accuracy and previous_mean_sqrt_error_test <= current_mean_sqrt_error_test and mean_sqrt_error_training < min_mean_sqrt_error_training): ## substituir pela real condição para parada
                     stop_condition = True
                     self.save_weights("final_weights_early_stopping.csv")
+                    print(f"Treinamento realizado em {self.epochs} epocas.")   
+                    print(f"A acuracia final da validaçao foi {validation_accuracy}.")
                     
-            print(f"Treinamento realizado em {self.epochs} epocas.")   
-            print(f"A acuracia final da validaçao foi {validation_accuracy}.")
+
 
     # Soma de todos os sqrt errors da camada de saida dividido por 2
     def instant_error(self, output, expected_output) -> float:

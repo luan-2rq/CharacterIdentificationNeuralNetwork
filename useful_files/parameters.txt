@@ -2,13 +2,13 @@
     n_neurons_input = 63
 
 #Número de neuronios em cada camada escondida
-    n_hidden_layers_neurons = [45, 30, 21, 20, 10]
+    n_hidden_layers_neurons = [31]
 
 #Número de neuronios na camada de saída
     n_neurons_output = 7
 
 #Taxa de aprendizado
-    learning_rate = 0.01
+    learning_rate = 0.0012
 
 #Número máximo de épocas do treinamento
     max_epochs = 4000
@@ -17,4 +17,4 @@
     min_accuracy=0.7
 
 #Erro quadratico mínima do treinamento(Parada Antecipada)
-    min_mean_sqrt_error_training = 0.01
+    min_mean_sqrt_error_training = 0.015

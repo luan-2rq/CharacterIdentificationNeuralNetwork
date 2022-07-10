@@ -25,17 +25,17 @@ def main():
     #Cada caractere tera 63 pixeis que os representam, portanto terao 63 neuronios de entrada
     n_neurons_input = 63
     #Camadas escondida, contendo 5 camadas 
-    n_hidden_layers_neurons = [45, 30, 21, 20, 10]
+    n_hidden_layers_neurons = [31]
     #Serao 7 classes diferentes de caracteres, portanto serao 7 neuronios de saida
     n_neurons_output = 7
     #Taxa de aprendizado deve ser entre [0, 1] (nao pode ser inicializado com 0)
-    learning_rate = 0.01
+    learning_rate = 0.0012
 
     #Inicializando a instancia da rede neural
     mlp = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate)
 
     #Treinando a rede
-    mlp.train(training_dataset, validation_dataset, 4000, early_stopping=True, min_accuracy=0.7, min_mean_sqrt_error_training=0.01)
+    mlp.train(training_dataset, validation_dataset, 4000, early_stopping=True, min_accuracy=0.7, min_mean_sqrt_error_training=0.015)
 
     #Conjunto de teste
     test_dataset_test_data = test_dataset[:,0:63]
