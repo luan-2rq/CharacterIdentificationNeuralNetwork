@@ -25,7 +25,7 @@ def main():
     #Cada caractere tera 63 pixeis que os representam, portanto terao 63 neuronios de entrada
     n_neurons_input = 63
     #Camadas escondida, contendo 5 camadas 
-    n_hidden_layers_neurons = [31]
+    n_hidden_layers_neurons = [30]
     #Serao 7 classes diferentes de caracteres, portanto serao 7 neuronios de saida
     n_neurons_output = 7
     #Taxa de aprendizado deve ser entre [0, 1] (nao pode ser inicializado com 0)
