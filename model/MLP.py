@@ -150,7 +150,7 @@ class MLP(object):
                 
             mean_sqrt_error_training = sum_training_instant_errors / len(training_data)
 
-            print(f"Erro Quadrado Medio Treinamento: {mean_sqrt_error_training}")
+            print(f"Erro Quadratico Medio Treinamento: {mean_sqrt_error_training}")
 
             if early_stopping:
                 ######## Validacao ########
@@ -170,7 +170,7 @@ class MLP(object):
                 previous_mean_sqrt_error_test = current_mean_sqrt_error_test
                 current_mean_sqrt_error_test = sum_test_instant_errors / len(test_data)
                 
-                print(f"Erro Quadrado Medio Validacao: {current_mean_sqrt_error_test}")
+                print(f"Erro Quadratico Medio Validacao: {current_mean_sqrt_error_test}")
 
                 #######################
 
