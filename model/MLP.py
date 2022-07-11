@@ -10,12 +10,11 @@ class MLP(object):
         self.n_output_neurons = n_output_neurons
         self.n_hidden_layers_neurons = n_hidden_layers_neurons
         self.learning_rate = learning_rate
-        self.weights = [] # weights é um array de matrizes contendo todos os pesos da rede
-        self.delta_weights = []
-        self.activations = [] # ativacoes dos neuronios
-        self.derivatives = [] #derivadas por neuronio
-        self.induced_fields = [] #induced fields
-        self.local_gradients = [] #local gradients
+        self.weights = [] #Pesos da rede
+        self.delta_weights = [] #Alteracao de pesos, eh alterado durante o backpropagation
+        self.activations = [] #Ativacoes dos neuronios
+        self.induced_fields = [] #Campos Locais Induzidos
+        self.local_gradients = [] #Gradientes Locais
         self.n_neurons = [] # lista contendo o numero de neuronios de cada camada
         self.epochs = 0
 
@@ -143,10 +142,9 @@ class MLP(object):
             #Passos 6 e 7 
                 #backpropagation
                 self.back_propagate(expected_output)
-                # self.print_weights()
-                # self.print_delta_weights()
+
             #Passo 8
-                #Weights update
+                #Atualizacao de pesos
                 for i in range(len(self.weights)):  
                     self.weights[i] = self.weights[i] + self.delta_weights[i]
                 
@@ -176,7 +174,7 @@ class MLP(object):
 
                 #######################
 
-                ######### Validacao Teste ###########
+                ######### Validacao Acuracia ###########
 
                 validation_accuracy = (correct_predictions_test/len(test_data))
                 print(f'Acuracia Validacao: {validation_accuracy}\n')
@@ -207,11 +205,11 @@ class MLP(object):
         instant_error = 0.5*sum_sqrt_error
         return instant_error
 
-    def predict(self, dataset):
+    def predict(self, dataset, dataset_labels):
         outputs = []
         for i, tuple in enumerate(dataset):
             output = self.feed_forward(tuple)
-            print(f"Saida {i}: {self.answer(output)}")
+            print(f"Saida {i+1}: {self.answer(output)}   Saida Esperada: {self.answer(dataset_labels[i])}")
             outputs.append(output)
         return outputs
 

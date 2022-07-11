@@ -8,10 +8,10 @@
     n_neurons_output = 7
 
 #Taxa de aprendizado
-    learning_rate = 0.0012
+    learning_rate = 0.01
 
 #Número máximo de épocas do treinamento
-    max_epochs = 2000
+    max_epochs = 150
 
 #Acurácia mínima da validação(Parada Antecipada)
     min_accuracy=0.7
