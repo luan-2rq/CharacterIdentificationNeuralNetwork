@@ -34,7 +34,7 @@ class MLP(object):
 
     # Inicialização dos pesos
     def init_weights(self):  
-        np.random.seed(12345)
+        np.random.seed(25475)
         for i in range(len(self.n_neurons)-1):
             weight_layer = np.random.uniform(-1,1, (self.n_neurons[i]+1, self.n_neurons[i+1]))
             delta_weights_layer = np.random.uniform(0,0, (self.n_neurons[i]+1, self.n_neurons[i+1]))
