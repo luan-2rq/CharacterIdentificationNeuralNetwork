@@ -5,6 +5,7 @@ from math import *
 import sklearn.metrics as metrics
 import matplotlib.pyplot as plt
 import seaborn as sn
+from utils import *
 
 def main():
 
@@ -31,15 +32,18 @@ def main():
     #Epocas maximas
     maxEpoch = 150
 
+    # Função de ativação
+    activation_func = sigmoid_func 
+
     #Inicializando a instancia da rede neural
-    mlp = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate)
+    mlp = MLP(n_neurons_input, n_neurons_output, n_hidden_layers_neurons, learning_rate, activation_func, sigmoid_derivative_func)
 
     #Parametros da validacao
     min_accuracy=0.7
-    min_mean_sqrt_error_training=0.015
+    min_mean_sqrt_error_training=0.03
 
     #Treinando a rede
-    mlp.train(training_dataset, validation_dataset, maxEpoch, early_stopping=False, min_accuracy=min_accuracy, min_mean_sqrt_error_training=min_mean_sqrt_error_training)
+    mlp.train(training_dataset, validation_dataset, maxEpoch, early_stopping=True, min_accuracy=min_accuracy, min_mean_sqrt_error_training=min_mean_sqrt_error_training)
 
     #Conjunto de teste
     test_dataset_data = test_dataset[:,0:63]

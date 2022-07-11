@@ -17,4 +17,4 @@
     min_accuracy=0.7
 
 #Erro quadratico mínima do treinamento(Parada Antecipada)
-    min_mean_sqrt_error_training = 0.015
+    min_mean_sqrt_error_training = 0.03
