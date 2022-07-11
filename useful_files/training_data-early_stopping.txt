@@ -1,621 +1,621 @@
 ###########################Epoca: 1#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 2#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 3#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 4#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 5#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 6#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 7#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 8#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 9#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 10#################################
-Erro Quadrado Medio Treinamento: 0.8571428571428571
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.8571428571428571
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 11#################################
-Erro Quadrado Medio Treinamento: 0.8571428571428571
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.8571428571428571
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 12#################################
-Erro Quadrado Medio Treinamento: 0.8571428571428571
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.8571428571428571
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 13#################################
-Erro Quadrado Medio Treinamento: 0.8571428571428571
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.8571428571428571
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 14#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 15#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 16#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
-Erro Quadrado Medio Validacao: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Validacao: 0.9047619047619048
 Acuracia Validacao: 0.09523809523809523
 
 ###########################Epoca: 17#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
-Erro Quadrado Medio Validacao: 0.8571428571428571
+Erro Quadratico Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Validacao: 0.8571428571428571
 Acuracia Validacao: 0.14285714285714285
 
 ###########################Epoca: 18#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
-Erro Quadrado Medio Validacao: 0.8571428571428571
+Erro Quadratico Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Validacao: 0.8571428571428571
 Acuracia Validacao: 0.14285714285714285
 
 ###########################Epoca: 19#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
-Erro Quadrado Medio Validacao: 0.8571428571428571
+Erro Quadratico Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Validacao: 0.8571428571428571
 Acuracia Validacao: 0.14285714285714285
 
 ###########################Epoca: 20#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
-Erro Quadrado Medio Validacao: 0.8571428571428571
+Erro Quadratico Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Validacao: 0.8571428571428571
 Acuracia Validacao: 0.14285714285714285
 
 ###########################Epoca: 21#################################
-Erro Quadrado Medio Treinamento: 0.7619047619047619
-Erro Quadrado Medio Validacao: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.7619047619047619
+Erro Quadratico Medio Validacao: 0.8095238095238095
 Acuracia Validacao: 0.19047619047619047
 
 ###########################Epoca: 22#################################
-Erro Quadrado Medio Treinamento: 0.7142857142857143
-Erro Quadrado Medio Validacao: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.7142857142857143
+Erro Quadratico Medio Validacao: 0.8095238095238095
 Acuracia Validacao: 0.19047619047619047
 
 ###########################Epoca: 23#################################
-Erro Quadrado Medio Treinamento: 0.6666666666666666
-Erro Quadrado Medio Validacao: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.6666666666666666
+Erro Quadratico Medio Validacao: 0.8095238095238095
 Acuracia Validacao: 0.19047619047619047
 
 ###########################Epoca: 24#################################
-Erro Quadrado Medio Treinamento: 0.6666666666666666
-Erro Quadrado Medio Validacao: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.6666666666666666
+Erro Quadratico Medio Validacao: 0.8095238095238095
 Acuracia Validacao: 0.19047619047619047
 
 ###########################Epoca: 25#################################
-Erro Quadrado Medio Treinamento: 0.6190476190476191
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.6190476190476191
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 26#################################
-Erro Quadrado Medio Treinamento: 0.5714285714285714
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.5714285714285714
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 27#################################
-Erro Quadrado Medio Treinamento: 0.5714285714285714
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.5714285714285714
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 28#################################
-Erro Quadrado Medio Treinamento: 0.5714285714285714
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.5714285714285714
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 29#################################
-Erro Quadrado Medio Treinamento: 0.5714285714285714
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.5714285714285714
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 30#################################
-Erro Quadrado Medio Treinamento: 0.5238095238095238
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.5238095238095238
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 31#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 32#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 33#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 34#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 35#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 36#################################
-Erro Quadrado Medio Treinamento: 0.38095238095238093
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.38095238095238093
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 37#################################
-Erro Quadrado Medio Treinamento: 0.38095238095238093
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.38095238095238093
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 38#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
-Erro Quadrado Medio Validacao: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Validacao: 0.7619047619047619
 Acuracia Validacao: 0.23809523809523808
 
 ###########################Epoca: 39#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
-Erro Quadrado Medio Validacao: 0.7142857142857143
+Erro Quadratico Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Validacao: 0.7142857142857143
 Acuracia Validacao: 0.2857142857142857
 
 ###########################Epoca: 40#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
-Erro Quadrado Medio Validacao: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Validacao: 0.6666666666666666
 Acuracia Validacao: 0.3333333333333333
 
 ###########################Epoca: 41#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
-Erro Quadrado Medio Validacao: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Validacao: 0.6666666666666666
 Acuracia Validacao: 0.3333333333333333
 
 ###########################Epoca: 42#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
-Erro Quadrado Medio Validacao: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Validacao: 0.6666666666666666
 Acuracia Validacao: 0.3333333333333333
 
 ###########################Epoca: 43#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
-Erro Quadrado Medio Validacao: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Validacao: 0.6666666666666666
 Acuracia Validacao: 0.3333333333333333
 
 ###########################Epoca: 44#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
-Erro Quadrado Medio Validacao: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Validacao: 0.6666666666666666
 Acuracia Validacao: 0.3333333333333333
 
 ###########################Epoca: 45#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
-Erro Quadrado Medio Validacao: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Validacao: 0.6666666666666666
 Acuracia Validacao: 0.3333333333333333
 
 ###########################Epoca: 46#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.6666666666666666
 Acuracia Validacao: 0.3333333333333333
 
 ###########################Epoca: 47#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.6190476190476191
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.6190476190476191
 Acuracia Validacao: 0.38095238095238093
 
 ###########################Epoca: 48#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.5714285714285714
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.5714285714285714
 Acuracia Validacao: 0.42857142857142855
 
 ###########################Epoca: 49#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.5238095238095238
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.5238095238095238
 Acuracia Validacao: 0.47619047619047616
 
 ###########################Epoca: 50#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.5238095238095238
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.5238095238095238
 Acuracia Validacao: 0.47619047619047616
 
 ###########################Epoca: 51#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.5238095238095238
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.5238095238095238
 Acuracia Validacao: 0.47619047619047616
 
 ###########################Epoca: 52#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 53#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 54#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 55#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 56#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 57#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 58#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 59#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 60#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 61#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 62#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 63#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 64#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 65#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 66#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 67#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 68#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 69#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 70#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 71#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 72#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 73#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 74#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 75#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.47619047619047616
 Acuracia Validacao: 0.5238095238095238
 
 ###########################Epoca: 76#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
-Erro Quadrado Medio Validacao: 0.42857142857142855
+Erro Quadratico Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Validacao: 0.42857142857142855
 Acuracia Validacao: 0.5714285714285714
 
 ###########################Epoca: 77#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 78#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 79#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 80#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 81#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 82#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 83#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 84#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 85#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 86#################################
-Erro Quadrado Medio Treinamento: 0.09523809523809523
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.09523809523809523
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 87#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 88#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 89#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 90#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 91#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 92#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 93#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 94#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 95#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 96#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 97#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 98#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 99#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 100#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 101#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 102#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 103#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.38095238095238093
 Acuracia Validacao: 0.6190476190476191
 
 ###########################Epoca: 104#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 105#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 106#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 107#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 108#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 109#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 110#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 111#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 112#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 113#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 114#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 115#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 116#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 117#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 118#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 119#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 120#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 121#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 122#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.3333333333333333
 Acuracia Validacao: 0.6666666666666666
 
 ###########################Epoca: 123#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.2857142857142857
 Acuracia Validacao: 0.7142857142857143
 
 ###########################Epoca: 124#################################
-Erro Quadrado Medio Treinamento: 0.0
-Erro Quadrado Medio Validacao: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.0
+Erro Quadratico Medio Validacao: 0.2857142857142857
 Acuracia Validacao: 0.7142857142857143
 
 Treinamento realizado em 124 epocas.

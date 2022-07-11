@@ -1,301 +1,301 @@
 ###########################Epoca: 1#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 2#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 3#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 4#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 5#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 6#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 7#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 8#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 9#################################
-Erro Quadrado Medio Treinamento: 0.9047619047619048
+Erro Quadratico Medio Treinamento: 0.9047619047619048
 ###########################Epoca: 10#################################
-Erro Quadrado Medio Treinamento: 0.8571428571428571
+Erro Quadratico Medio Treinamento: 0.8571428571428571
 ###########################Epoca: 11#################################
-Erro Quadrado Medio Treinamento: 0.8571428571428571
+Erro Quadratico Medio Treinamento: 0.8571428571428571
 ###########################Epoca: 12#################################
-Erro Quadrado Medio Treinamento: 0.8571428571428571
+Erro Quadratico Medio Treinamento: 0.8571428571428571
 ###########################Epoca: 13#################################
-Erro Quadrado Medio Treinamento: 0.8571428571428571
+Erro Quadratico Medio Treinamento: 0.8571428571428571
 ###########################Epoca: 14#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.8095238095238095
 ###########################Epoca: 15#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.8095238095238095
 ###########################Epoca: 16#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.8095238095238095
 ###########################Epoca: 17#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.8095238095238095
 ###########################Epoca: 18#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.8095238095238095
 ###########################Epoca: 19#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.8095238095238095
 ###########################Epoca: 20#################################
-Erro Quadrado Medio Treinamento: 0.8095238095238095
+Erro Quadratico Medio Treinamento: 0.8095238095238095
 ###########################Epoca: 21#################################
-Erro Quadrado Medio Treinamento: 0.7619047619047619
+Erro Quadratico Medio Treinamento: 0.7619047619047619
 ###########################Epoca: 22#################################
-Erro Quadrado Medio Treinamento: 0.7142857142857143
+Erro Quadratico Medio Treinamento: 0.7142857142857143
 ###########################Epoca: 23#################################
-Erro Quadrado Medio Treinamento: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.6666666666666666
 ###########################Epoca: 24#################################
-Erro Quadrado Medio Treinamento: 0.6666666666666666
+Erro Quadratico Medio Treinamento: 0.6666666666666666
 ###########################Epoca: 25#################################
-Erro Quadrado Medio Treinamento: 0.6190476190476191
+Erro Quadratico Medio Treinamento: 0.6190476190476191
 ###########################Epoca: 26#################################
-Erro Quadrado Medio Treinamento: 0.5714285714285714
+Erro Quadratico Medio Treinamento: 0.5714285714285714
 ###########################Epoca: 27#################################
-Erro Quadrado Medio Treinamento: 0.5714285714285714
+Erro Quadratico Medio Treinamento: 0.5714285714285714
 ###########################Epoca: 28#################################
-Erro Quadrado Medio Treinamento: 0.5714285714285714
+Erro Quadratico Medio Treinamento: 0.5714285714285714
 ###########################Epoca: 29#################################
-Erro Quadrado Medio Treinamento: 0.5714285714285714
+Erro Quadratico Medio Treinamento: 0.5714285714285714
 ###########################Epoca: 30#################################
-Erro Quadrado Medio Treinamento: 0.5238095238095238
+Erro Quadratico Medio Treinamento: 0.5238095238095238
 ###########################Epoca: 31#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.47619047619047616
 ###########################Epoca: 32#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.47619047619047616
 ###########################Epoca: 33#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.47619047619047616
 ###########################Epoca: 34#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.47619047619047616
 ###########################Epoca: 35#################################
-Erro Quadrado Medio Treinamento: 0.47619047619047616
+Erro Quadratico Medio Treinamento: 0.47619047619047616
 ###########################Epoca: 36#################################
-Erro Quadrado Medio Treinamento: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.38095238095238093
 ###########################Epoca: 37#################################
-Erro Quadrado Medio Treinamento: 0.38095238095238093
+Erro Quadratico Medio Treinamento: 0.38095238095238093
 ###########################Epoca: 38#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.3333333333333333
 ###########################Epoca: 39#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.3333333333333333
 ###########################Epoca: 40#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.3333333333333333
 ###########################Epoca: 41#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.3333333333333333
 ###########################Epoca: 42#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.3333333333333333
 ###########################Epoca: 43#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.3333333333333333
 ###########################Epoca: 44#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.3333333333333333
 ###########################Epoca: 45#################################
-Erro Quadrado Medio Treinamento: 0.3333333333333333
+Erro Quadratico Medio Treinamento: 0.3333333333333333
 ###########################Epoca: 46#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 47#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 48#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 49#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 50#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 51#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 52#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 53#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 54#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 55#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 56#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 57#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 58#################################
-Erro Quadrado Medio Treinamento: 0.2857142857142857
+Erro Quadratico Medio Treinamento: 0.2857142857142857
 ###########################Epoca: 59#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Treinamento: 0.23809523809523808
 ###########################Epoca: 60#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Treinamento: 0.23809523809523808
 ###########################Epoca: 61#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Treinamento: 0.23809523809523808
 ###########################Epoca: 62#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Treinamento: 0.23809523809523808
 ###########################Epoca: 63#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Treinamento: 0.23809523809523808
 ###########################Epoca: 64#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Treinamento: 0.23809523809523808
 ###########################Epoca: 65#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Treinamento: 0.23809523809523808
 ###########################Epoca: 66#################################
-Erro Quadrado Medio Treinamento: 0.23809523809523808
+Erro Quadratico Medio Treinamento: 0.23809523809523808
 ###########################Epoca: 67#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 68#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 69#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 70#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 71#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 72#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 73#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 74#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 75#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 76#################################
-Erro Quadrado Medio Treinamento: 0.19047619047619047
+Erro Quadratico Medio Treinamento: 0.19047619047619047
 ###########################Epoca: 77#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 78#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 79#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 80#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 81#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 82#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 83#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 84#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 85#################################
-Erro Quadrado Medio Treinamento: 0.14285714285714285
+Erro Quadratico Medio Treinamento: 0.14285714285714285
 ###########################Epoca: 86#################################
-Erro Quadrado Medio Treinamento: 0.09523809523809523
+Erro Quadratico Medio Treinamento: 0.09523809523809523
 ###########################Epoca: 87#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Treinamento: 0.047619047619047616
 ###########################Epoca: 88#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Treinamento: 0.047619047619047616
 ###########################Epoca: 89#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Treinamento: 0.047619047619047616
 ###########################Epoca: 90#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Treinamento: 0.047619047619047616
 ###########################Epoca: 91#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Treinamento: 0.047619047619047616
 ###########################Epoca: 92#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Treinamento: 0.047619047619047616
 ###########################Epoca: 93#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Treinamento: 0.047619047619047616
 ###########################Epoca: 94#################################
-Erro Quadrado Medio Treinamento: 0.047619047619047616
+Erro Quadratico Medio Treinamento: 0.047619047619047616
 ###########################Epoca: 95#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 96#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 97#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 98#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 99#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 100#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 101#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 102#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 103#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 104#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 105#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 106#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 107#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 108#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 109#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 110#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 111#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 112#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 113#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 114#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 115#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 116#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 117#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 118#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 119#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 120#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 121#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 122#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 123#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 124#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 125#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 126#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 127#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 128#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 129#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 130#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 131#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 132#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 133#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 134#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 135#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 136#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 137#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 138#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 139#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 140#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 141#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 142#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 143#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 144#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 145#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 146#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 147#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 148#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 149#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 ###########################Epoca: 150#################################
-Erro Quadrado Medio Treinamento: 0.0
+Erro Quadratico Medio Treinamento: 0.0
 Treinamento realizado em 150 epocas.
