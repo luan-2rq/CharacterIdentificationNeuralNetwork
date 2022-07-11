@@ -222,6 +222,15 @@ class MLP(object):
             else:
                 answer += '.'
         return answer
+        # Exemplos de answer:
+        #     A: A......
+        #     B: .B.....
+        #     C: ..C....
+        #     D: ...D...
+        #     E: ....E..
+        #     J: .....J.
+        #     K: ......K
+    
         # Exemplos:
         #     A: 1000000
         #     B: 0100000
