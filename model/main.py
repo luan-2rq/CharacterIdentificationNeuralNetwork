@@ -30,7 +30,7 @@ def main():
     #Taxa de aprendizado
     learning_rate = 0.01
     #Epocas maximas
-    maxEpoch = 150
+    maxEpoch = 1000
 
     # Função de ativação
     activation_func = sigmoid_func 
@@ -43,7 +43,7 @@ def main():
     min_mean_sqrt_error_training=0.03
 
     #Treinando a rede
-    mlp.train(training_dataset, validation_dataset, maxEpoch, early_stopping=True, min_accuracy=min_accuracy, min_mean_sqrt_error_training=min_mean_sqrt_error_training)
+    mlp.train(training_dataset, validation_dataset, maxEpoch, early_stopping=False, min_accuracy=min_accuracy, min_mean_sqrt_error_training=min_mean_sqrt_error_training)
 
     #Conjunto de teste
     test_dataset_data = test_dataset[:,0:63]
