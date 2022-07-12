@@ -28,9 +28,9 @@ def main():
     #Neuronios na camada de saida
     n_neurons_output = 7
     #Taxa de aprendizado
-    learning_rate = 0.01
+    learning_rate = 0.05
     #Epocas maximas
-    maxEpoch = 1000
+    maxEpoch = 200
 
     # Função de ativação
     activation_func = sigmoid_func 
@@ -40,10 +40,10 @@ def main():
 
     #Parametros da validacao
     min_accuracy=0.7
-    min_mean_sqrt_error_training=0.03
+    min_mean_sqrt_error_training=0.05
 
     #Treinando a rede
-    mlp.train(training_dataset, validation_dataset, maxEpoch, early_stopping=False, min_accuracy=min_accuracy, min_mean_sqrt_error_training=min_mean_sqrt_error_training)
+    mlp.train(training_dataset, validation_dataset, maxEpoch, early_stopping=True, min_accuracy=min_accuracy, min_mean_sqrt_error_training=min_mean_sqrt_error_training)
 
     #Conjunto de teste
     test_dataset_data = test_dataset[:,0:63]
