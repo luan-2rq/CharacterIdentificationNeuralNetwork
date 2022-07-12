@@ -80,7 +80,7 @@ class MLP(object):
 
         error = expected_output - self.activations[-1][1:]
 
-        self.local_gradients[-1] = error * self.activation_func_derivative(self.activations[-1][1:])
+        self.local_gradients[-1] = error * self.activation_func_derivative(self.induced_fields[-1][1:])
         
         output_local_gradients = np.array(self.local_gradients[-1], ndmin=2)
         previous_activations = self.activations[-2].reshape(self.activations[-2].shape[0], -1)
